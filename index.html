@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #F4BF96;
+    --color-heading: #eef3db;
+    --color-base: #CE5A67;
+    --color-base2: #1F1717;
+    --color-brand: #7e0926;
+    --color-brand2: #a0003d;
+    --sidbar-width: 240px;
+    --font-base: "Bai Jamjuree";
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+}
+
+.text-brand {
+    color: var(--color-brand);
+}
+
+.bg-base {
+    background-color: var(--color-base);
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid rgba(255,255,255, 0.1);
+}
+
+.shadow-effect {
+    transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand);
+    color: var(--color-base);
+}
+
+.navbar {
+    background-color: var(--color-base);
+}
+
+.navbar .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-brand);
+}
+
+.navbar .nav-link.active {
+    color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidbar-width);
+        background-color: #CE5A67;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-brand img {
+        border: 8px solid var(--color-brand);
+    }
+
+    #content-wrapper {
+        padding-left: var(--sidbar-width);
+    }
+}
+
+.btn {
+    padding: 10px 12px;
+    font-weight: 700;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-base);
+    text-align: center;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: var(--color-base);
+    border-color: var(--color-brand2);
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s;
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+.card-custom .card-custom-image {
+    overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+#contact .form-control {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: var(--color-body);
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
+
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    font-size: 24px;
+    color: var(--color-brand2);
+}
+
+.wavey {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: clamp(1.9rem, 5vw, 3rem); 
+    text-align: center;
+}
+
+.wavey span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waviy {
+    0%, 40%, 100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-0.5em); 
+    }
+}
+
+</style>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container flex-lg-column">
+            <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
+                <span class="h3 fw-bold d-block d-lg-none">LvlySlv.</span>
+                <img src="assets/me.jpg" class="d-none d-lg-block rounded-circle" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#project">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content-wrapper">
+        <section id="home" class="full-height px-lg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-6 text-center">
+                        <div class="wavey">
+                            <span style="--i:5">L</span>
+                            <span style="--i:6">O</span>
+                            <span style="--i:7">V</span>
+                            <span style="--i:8">E</span>
+                            <span style="--i:9">L</span>
+                            <span style="--i:10">Y</span>
+                            <span style="--i:11"></span>
+                            <span style="--i:12">S</span>
+                            <span style="--i:13">A</span>
+                            <span style="--i:14">L</span>
+                            <span style="--i:15">V</span>
+                            <span style="--i:16">E</span>
+                        </div>
+                        <p class="lead mt-4 mb-4" data-aos="fade-up" data-aos-delay="300">IT Student | QA</p>
+                        <div class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="600">
+                            <a href="#project" class="btn btn-brand mb-3">Download CV</a>
+                            <div class="col-auto">
+                                <div class="social-icons">
+                                    <a href="https://www.instagram.com/itsyouelyy.png/profilecard/?igsh=MTE3YnVib3N5aXV2aw=="
+                                        target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100008931993440" target="_blank"><i
+                                            class="bi bi-facebook"></i></a>
+                                    <a href="https://github.com/lvlyslv20" target="_blank"><i
+                                            class="bi bi-github"></i></a>
+                                    <a href="mailto:salvelynz@gmail.com"><i class="bi bi-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="full-height px-lg-5">
+            <div class="container">
+
+                <div class="row pb-4" data-aos="fade-up">
+                    <div class="col-lg-8">
+                        <h4 class="text-brand">ABOUT</h4>
+                    </div>
+                </div>
+
+                <div class="row gy-5">
+                    <div class="col-lg-6">
+
+                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education</h3>
+                        <div class="row gy-4">
+
+                            <div class="row justify-content-center">
+                                <div class="col-4 col-sm-3 col-md-2 text-center">
+                                    <img src="assets/logo1.jpg" class="img-fluid" alt="School Logo 1">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 text-center">
+                                    <img src="assets/logo2.jpeg" class="img-fluid" alt="School Logo 2">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 text-center">
+                                    <img src="assets/logo3.png" class="img-fluid" alt="School Logo 3">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Skills</h3>
+                        <div class="row gy-4">
+
+                            <div class="row justify-content-center">
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/html.webp" class="img-fluid bouncing-image" alt="HTML">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/css.webp" class="img-fluid bouncing-image" alt="CSS">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/js.webp" class="img-fluid bouncing-image" alt="JavaScript">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/github.png" class="img-fluid bouncing-image" alt="GitHub">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/figma.png" class="img-fluid bouncing-image" alt="Figma">
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2 mb-3 text-center">
+                                    <img src="assets/canva.webp" class="img-fluid bouncing-image" alt="Canva">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="project" class="full-height px-lg-5">
+            <div class="container">
+
+                <div class="row pb-4" data-aos="fade-up">
+                    <div class="col-lg-8">
+                        <h6 class="text-brand">PROJECTS</h6>
+                        <h1>My Project</h1>
+                    </div>
+                </div>
+
+                <div class="row gy-4">
+
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="card-custom rounded-4 bg-base shadow-effect">
+                            <div class="card-custom-image rounded-4">
+                                <img class="rounded-4" src="./assets/images/blog-post-1.jpg" alt="">
+                            </div>
+                            <div class="card-custom-content p-4">
+                                <p class="text-brand mb-2">Title</p>
+                                <h5 class="mb-4">Description</h5>
+                                <a href="#" class="link-custom">Visit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="contact" class="full-height px-lg-5">
+            <div class="container">
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8 pb-4" data-aos="fade-up">
+                        <h6 class="text-brand">CONTACT</h6>
+                        <h1>Let's talk
+                        </h1>
+                    </div>
+
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+                        <form action="#" class="row g-lg-3 gy-3">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group col-12">
+                                <textarea name="" rows="4" class="form-control"
+                                    placeholder="Enter your message"></textarea>
+                            </div>
+                            <div class="form-group col-12 d-grid">
+                                <button type="submit" class="btn btn-brand">Send message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <footer class="py-5 px-lg-5">
+            <div class="container">
+                <div class="row gy-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Lovely Salve <a href="#" class="fw-bold"> 2024</a></p>
+                    </div>
+                    <div class="col-auto">
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/itsyouelyy.png/profilecard/?igsh=MTE3YnVib3N5aXV2aw=="
+                                target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100008931993440" target="_blank"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="https://github.com/lvlyslv20" target="_blank"><i class="bi bi-github"></i></a>
+                            <a href="mailto:salvelynz@gmail.com"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
