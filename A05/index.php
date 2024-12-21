@@ -1,13 +1,15 @@
-<?php include("connect.php");?>
+<?php include("connect.php"); ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Island of Personality</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Poller+One&family=Trade+Winds&family=Varela+Round&family=Wendy+One&display=swap');
@@ -28,7 +30,7 @@
     }
 
     .bgimg {
-      background-image: url("assets/images/BG.png");
+      background-image: url("assets/images/1.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -39,8 +41,8 @@
       font-weight: 400;
       font-style: normal;
       padding: 10px 20px;
-      background-color: orangered;
-      color: white;
+      background-color: white;
+      color: black;
       text-decoration: none;
       border-radius: 5px;
       transition: all 0.2s ease;
@@ -50,7 +52,7 @@
     }
 
     .btnTag:hover {
-      background-color: white;
+      background-color: orangered;
       color: black;
       transform: scale(1.05);
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -117,7 +119,7 @@
       color: black;
     }
 
-    .card-textsD{
+    .card-textsD {
       font-size: 22px;
       color: black;
       padding: 15px;
@@ -153,76 +155,65 @@
       box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
     }
 
-    /* Container for the image */
     .image-container {
       position: relative;
       width: auto;
       max-height: 400px;
       overflow: hidden;
-      /* Ensures no tilt overflow */
       display: flex;
       justify-content: center;
       align-items: center;
       perspective: 100px;
-      /* Adds a 3D perspective effect */
     }
 
-    /* Image styles */
     .image {
       width: 100%;
-      height: auto;
+      height: 300px;
       transition: transform 0.5s ease-in-out;
-      /* Smooth transition for the tilt effect */
       transform-origin: center;
-      /* Tilt around the center of the image */
     }
 
-    /* Tilt effect on hover */
     .image-container:hover .image {
       transform: rotate(5deg);
-      /* Tilts the image clockwise by 5 degrees */
     }
 
-    /* Modify the card image styles to be more responsive */
-.card-img-top {
-  height: auto;
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover; /* Ensures the image covers the space without distortion */
-}
+    .card-img-top {
+      height: auto;
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
 
-/* Ensure card body adjusts with screen size */
-.card-body {
-  padding: 1rem;
-}
+    .card-body {
+      padding: 1rem;
+    }
 
-/* Modify the grid for the contents to be more responsive */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-.col-lg-4, .col-md-6, .col-sm-6 {
-  margin-bottom: 20px;
-  flex: 1 1 calc(33.3333% - 20px); /* Ensure the cards take up 1/3 width on large screens */
-}
+    .col-lg-4,
+    .col-md-6,
+    .col-sm-6 {
+      margin-bottom: 20px;
+      flex: 1 1 calc(33.3333% - 20px);
+    }
 
-/* Ensure content cards take full width on smaller screens */
-@media (max-width: 767px) {
-  .col-lg-4 {
-    flex: 1 1 100%; /* Makes the card take full width on smaller screens */
-  }
-}
+    @media (max-width: 767px) {
+      .col-lg-4 {
+        flex: 1 1 100%;
+      }
+    }
 
-@media (max-width: 575px) {
-  .col-md-6, .col-sm-6 {
-    flex: 1 1 100%; /* Ensures cards take full width on mobile screens */
-  }
-}
+    @media (max-width: 575px) {
 
-
-
+      .col-md-6,
+      .col-sm-6 {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 
@@ -230,13 +221,13 @@
 
   <header class="bgimg d-flex justify-content-center align-items-center text-center" style="height: 100vh;">
     <div>
-      <p><a href="#menu" class="btnTag btn-lg">Know me better</a></p>
+      <p><a href="#menu" class="btnTag btn-lg">Explore my Personality</a></p>
     </div>
   </header>
 
   <div class="background container-fluid text-white py-4" id="menu">
     <div class="container">
-      <h1 class="titleIsland text-center display-1 mb-5 p-2">ISLANDS OF PERSONALITY</h1>
+      <h1 class="titleIsland text-center display-1 mb-5 p-2">LOVELY'S ISLANDS OF PERSONALITY</h1>
       <div class="row text-center">
         <?php while ($row = $result->fetch_assoc()): ?>
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-3">
