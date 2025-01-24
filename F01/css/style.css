@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Bebas Neue", serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+.landing {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-section-wrapper {
+    position: relative;
+    flex: 1;
+    z-index: 2;
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 1.3rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.text-section h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    color: black;
+    margin-top: 10px;
+}
+
+.text-section p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: rgb(36, 36, 36);
+}
+
+.image-slider {
+    flex: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 280px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.card .description {
+    z-index: 2;
+}
+
+.card .row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.card .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.card .description h4 {
+    text-transform: uppercase;
+    color: rgb(255, 230, 0);
+}
+
+.card .description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+    align-items: center;
+
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.description h4 {
+    text-transform: uppercase;
+    align-items: center;
+}
+
+input {
+    display: none;
+}
+
+input:checked+label {
+    width: 600px;
+}
+
+input:checked+label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card {
+    padding: 20px;
+    position: relative;
+}
+
+.card .description {
+    z-index: 2;
+}
+
+#city {
+    padding: 50px 0;
+    text-align: center;
+
+}
+
+.city-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #ccc;
+}
+
+.city-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 3, 0.4);
+    transition: transform 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.city-card:hover {
+    transform: scale(1.09);
+}
+
+.city-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.city-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.city-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.city-info p {
+    font-size: 1rem;
+    font-weight: light;
+    color: #FFD700;
+}
+
+.city-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.city-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.city-wrapper::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+
+.color1 {
+    background-color: blue;
+}
+
+.color2 {
+    background-color: yellow;
+}
+
+.color3 {
+    background-color: black;
+}
+
+.color4 {
+    background-color: green;
+}
+
+.color5 {
+    background-color: red;
+}
+
+.article {
+    height: 400px;
+    width: 600px;
+}
+
+#blog {
+    background-color: #eceaea;
+}
+
+@media (max-width: 768px) {
+    .city-wrapper {
+        gap: 10px;
+    }
+
+    .city-card {
+        width: 200px;
+    }
+}
+
+.city-wrapper::-webkit-scrollbar {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100% !important;
+    }
+}
